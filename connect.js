@@ -1,3 +1,11 @@
+/*
+  gitFlow process
+
+  git add <filename>
+  git commit =m "message"
+  git push or git merge <path>
+*/
+
 const ewelink = require('ewelink-api');
 
 (async () => {
