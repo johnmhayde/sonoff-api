@@ -19,6 +19,8 @@ const ewelink = require('ewelink-api');
   /* get all devices */
   const devices = await connection.getDevices();
 
+  console.log(devices.length + " device(s)  found");
+
   // loop through each device and print info
   for (i = 0; i < devices.length; i++) {
     console.log("Device ID: " + devices[i].deviceid);
