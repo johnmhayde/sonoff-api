@@ -25,7 +25,7 @@ const ewelink = require('ewelink-api');
   for (i = 0; i < devices.length; i++) {
     console.log("Device ID: " + devices[i].deviceid);
     console.log("Switch Status: " + devices[i].params.switch);
-    console.log("Temperature: " + devices[i].params.currentTemperature);
+    console.log("Temperature: " + (parseFloat(devices[i].params.currentTemperature) * 9 / 5 + 32).toFixed(2));
     console.log("Humidity: " + devices[i].params.currentHumidity);
   }
 
