@@ -1,0 +1,34 @@
+/*
+  gitFlow process
+
+  git add <filename>
+  git commit =m "message"
+  git push or git merge <path>
+*/
+
+const ewelink = require('ewelink-api');
+
+(async () => {
+
+  const connection = new ewelink({
+    email: 'johnmichaelhayde@gmail.com',
+    password: 'johnmichael06',
+    region: 'us',
+  });
+
+  /* get temp and humidity */
+	console.log("getting device information from connection");
+	const device = await connection.getDevice('1000cf6127');
+	//console.log("device info: "+JSON.stringify(device));
+	if (device && device != null && !device.error) {
+		const temperatureValue = (parseFloat(device.params.currentTemperature) * 9 / 5 + 32).toFixed(2);
+    const humidityValue = (parseFloat(device.params.currentHumidity));
+		console.log("Temperature : " + temperatureValue + "°");
+    console.log("Humidity : " + humidityValue + "%");
+		//await updateNewTemp('1000cf6127', temperatureValue);
+	} else {
+		//		throw Error(device);
+		console.log("Error retrieving temperature, nothing to udpate");
+	}
+
+})();
