@@ -2,10 +2,11 @@
 Sample programs for using the Sonoff/Ewelink API
 
 ## Pre-requisties:
-You must have a Sonoff wifi switch/temperature sensor and associated account setup
+You must have a Sonoff wifi switch/temperature sensor and associated account setup.
 
+Run the command:
 `npm install ewlink-api`
 
-To Run:
+## To Run:
 
 `node <filename.js>`
