@@ -1,5 +1,5 @@
 # sonoff-api
-Sample programs for using the Sonoff/Ewelink APE
+Sample programs for using the Sonoff/Ewelink API
 
 Pre-requisties:
 
