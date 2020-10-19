@@ -1,24 +1,16 @@
-/*
-  gitFlow process
-
-  git add <filename>
-  git commit =m "message"
-  git push or git merge <path>
-*/
-
 const ewelink = require('ewelink-api');
 
 (async () => {
 
   const connection = new ewelink({
-    email: 'johnmichaelhayde@gmail.com',
-    password: 'johnmichael06',
+    email: 'email@gmail.com',
+    password: 'password',
     region: 'us',
   });
 
   /* get temp and humidity */
 	console.log("getting device information from connection");
-	const device = await connection.getDevice('1000cf6127');
+	const device = await connection.getDevice('deviceID');
 	//console.log("device info: "+JSON.stringify(device));
 	if (device && device != null && !device.error) {
 		const temperatureValue = (parseFloat(device.params.currentTemperature) * 9 / 5 + 32).toFixed(2);
